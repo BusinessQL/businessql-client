@@ -18,7 +18,9 @@ export class BusinessQLClient {
   constructor(options?: BusinessQLClientOptions) {
     this.apiKey = options?.apiKey || process.env.BUSINESSQL_API_KEY || '';
     this.url =
-      options?.url || process.env.BUSINESSQL_URL || 'http://bql.local:8130';
+      options?.url ||
+      process.env.BUSINESSQL_URL ||
+      'https://data.businessql.com';
   }
 
   graphql = async <T>({
